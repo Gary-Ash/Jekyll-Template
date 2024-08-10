@@ -1,0 +1,106 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+	{% capture url_path %}{{site.url}}{{page.url}}{% endcapture %}
+	<head>
+		<title>{{ site.title }}</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata|PT+Sans+Narrow&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/favicons/favicon.ico?">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/assets/favicons/manifest.json">
+
+		<script src="https://kit.fontawesome.com/13aeace8da.js" crossorigin="anonymous"></script>
+	</head>
+
+	<header>
+		<figure>
+			<img src="{{ site.baseurl }}/assets/images/Logo.png" alt="picure of my logo, my initials in red in a red oval">
+			<figcaption>The greatest apps and games for you mobile devices</figcaption>
+		</figure>
+		<nav>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <div class="topnav" id="myTopnav" style="float: left;">
+			<a href="/index.html">
+				<div class="tooltip"> <i class="fas fa-home"></i>
+					<span class="tooltiptext">Home</span>
+				</div>
+			</a>
+
+			<a href="/blog/index.html">
+				<div class="tooltip"> <i class="fas fa-blog"></i>
+					<span class="tooltiptext">Blog</span>
+				</div>
+			</a>
+
+			<a href="/about/index.html">
+				<div class="tooltip"> <i class="fas fa-address-card"></i>
+					<span class="tooltiptext">About site/About me</span>
+				</div>
+			</a>
+
+			<a href="{{url_path}}" id="theme-toggle" onclick="modeSwitcher()">
+				<div class="tooltip"><i class="fa-regular fa-lightbulb"></i>
+					<span class="tooltiptext">Toggle Dark mode</span>
+				</div>
+			</a>
+
+			<form method="get" id="searchBox" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="geedbla.com"/>
+				<input type="hidden" name="k7" value="r"/>
+				<input class="search" type="text" name="q" maxlength="300" placeholder="Search"/>
+			</form>
+
+			<a href="http://www.geedbla.com/feed.xml" style="float: right;">
+				<div class="tooltip"><i>RSS</i>
+					<span class="tooltiptext">RSS Feed</span>
+				</div>
+			</a>
+
+			<a href="mailto:{{site.email}}" style="float: right;">
+				<div class="tooltip"><i class="fas fa-envelope"></i>
+					<span class="tooltiptext">E-mail me</span>
+				</div>
+			</a>
+
+			<a href="https://github.com/{{site.github_username}}" style="float: right;">
+				<div class="tooltip"><i class="fab fa-github"></i>
+					<span class="tooltiptext">My GitHub</span>
+				</div>
+			</a>
+
+			<a href="https://www.twitter.com/{{site.twitter_username}}" style="float: right;">
+				<div class="tooltip"><i class="fab fa-twitter"></i>
+					<span class="tooltiptext">My Twitter</span>
+				</div>
+			</a>
+
+			<a href="{{site.mastodon_account}}" style="float: right;">
+				<div class="tooltip"><i class="fa-brands fa-mastodon"></i>
+					<span class="tooltiptext">My Mastodon</span>
+				</div>
+			</a>
+		</nav>
+		<script src="/scripts/mode-switcher.js"></script>
+	</header>
+
+	<body>
+		<article id="theArticle">
+			{{ content }}
+		</article>
+
+		<footer id="theFooter">
+			Copyright &#169; <script type="text/javascript">
+			  document.write(new Date().getFullYear());
+			</script> By Gee Dbl A. All rights reserved.
+		</footer>
+		<script src="/scripts/calc-height.js"></script>
+	</body>
+</html>
